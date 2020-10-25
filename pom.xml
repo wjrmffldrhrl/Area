@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.wjrmffldrhrl</groupId>
   <artifactId>Area</artifactId>
-  <version>0.0.1-maven-SNAPSHOT</version>
+  <version>0.0.3</version>
   <dependencies>
     <dependency>
       <groupId>com.github.wjrmffldrhrl</groupId>
       <artifactId>Area</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.3</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
