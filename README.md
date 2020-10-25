@@ -1,2 +1,2 @@
-# string_area
+# Area
 Index area for working with strings
