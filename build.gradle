@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.wjrmffldrhrl'
-version '0.0.1'
+version '0.0.2'
 apply plugin: 'maven'
 
 repositories {
@@ -11,17 +11,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 
-install {
-    repositories {
-        mavenInstaller {
-            pom.version = '0.0.1-maven-SNAPSHOT'
-            pom.groupId = 'com.github.wjrmffldrhrl'
-            pom.artifactId = 'Area'
-        }
-    }
-}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'com.github.wjrmffldrhrl:Area:0.0.1'
+    implementation 'com.github.wjrmffldrhrl:Area:0.0.2'
 }
