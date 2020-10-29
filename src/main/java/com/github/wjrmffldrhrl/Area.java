@@ -99,6 +99,16 @@ public class Area {
     public int getLength() { return this.length; }
 
 
+    /**
+     * Return area to String ->
+     * {@code (start : 3 end : 5 )}
+     * @return String value
+     */
+    @Override
+    public String toString() {
+        return "start : " + this.start + " end : " + this.end;
+    }
+
     private boolean isInvalid(int startValue, int endValue) {
         return startValue < 0 || endValue < 0 || startValue > endValue || startValue == endValue;
     }
