@@ -1,0 +1,24 @@
+-classpath
+'C:/git/Area/target/classes'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/git/Area/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/git/Area/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Area 0.0.5 API'
+-linkoffline
+'http://docs.oracle.com/javase/7/docs/api' 'C:/git/Area/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'Area 0.0.5 API'

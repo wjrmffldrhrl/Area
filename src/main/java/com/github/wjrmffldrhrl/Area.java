@@ -20,10 +20,10 @@ public class Area {
      * @param start int
      * @param end int
      * @throws InvalidValueException If try initialize with invalid value
-     * <h4>Invalid value list</h4>
-     * <li> Input under 0</li>
-     * <li> End value under then start value </li>
-     * <li> Area length 0</li>
+     * Invalid value list
+     * Input under 0
+     * End value under then start value
+     * Area length 0
      */
     public Area(int start, int end) {
         if(isInvalid(start, end)) { throw new InvalidValueException("Input valid value"); }
@@ -43,8 +43,8 @@ public class Area {
     /**
      * Check index area overlap
      * @param compareArea Area
-     * @return <li>If compareArea index overlap with this Area : true</li>
-     *         <li>else : false</li>
+     * @return If compareArea index overlap with this Area : true
+     *         else : false
      */
     public boolean isOverlap(Area compareArea) {
 
@@ -100,7 +100,7 @@ public class Area {
 
 
     /**
-     * Return area to String ->
+     * Return area to String
      * {@code (start : 3 end : 5 )}
      * @return String value
      */
