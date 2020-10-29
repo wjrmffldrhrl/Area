@@ -1,23 +1,23 @@
 package Area;
 
 import com.github.wjrmffldrhrl.Area;
-import com.github.wjrmffldrhrl.exception.InvalidIndexException;
+import com.github.wjrmffldrhrl.exception.InvalidValueException;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class AreaTest {
 
-    @Test(expected = InvalidIndexException.class)
+    @Test(expected = InvalidValueException.class)
     public void underZeroIndexTest() {
         new Area(-1 , 4);
     }
 
-    @Test(expected = InvalidIndexException.class)
+    @Test(expected = InvalidValueException.class)
     public void inputInvalidIndexTest() {
         new Area(6, 4);
     }
 
-    @Test(expected = InvalidIndexException.class)
+    @Test(expected = InvalidValueException.class)
     public void sameIndexTest() {
         new Area(4 , 4);
     }

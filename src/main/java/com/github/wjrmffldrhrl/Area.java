@@ -1,9 +1,11 @@
 package com.github.wjrmffldrhrl;
 
-import com.github.wjrmffldrhrl.exception.InvalidIndexException;
+import com.github.wjrmffldrhrl.exception.InvalidValueException;
+
+import java.util.regex.Matcher;
 
 /**
- * String index area
+ * String slice util
  *
  * @author wjrmffldrhrl
  */
@@ -11,25 +13,38 @@ public class Area {
 
     private final int start;
     private final int end;
+    private final int length;
 
     /**
-     * Constructor
-     * @param startIndex int
-     * @param endIndex int
+     * Constructor with int
+     * @param start int
+     * @param end int
+     * @throws InvalidValueException If try initialize with invalid value
+     * <h4>Invalid value list</h4>
+     * <li> Input under 0</li>
+     * <li> End value under then start value </li>
+     * <li> Area length 0</li>
      */
-    public Area(int startIndex, int endIndex) {
-        if(startIndex < 0 || endIndex < 0) { throw new InvalidIndexException("Area index must over then 0"); }
-        if(startIndex > endIndex) { throw new InvalidIndexException("Start index must over then end index"); }
-        if(startIndex == endIndex) { throw new InvalidIndexException("Area length must over then 0"); }
-        this.start = startIndex;
-        this.end = endIndex;
+    public Area(int start, int end) {
+        if(isInvalid(start, end)) { throw new InvalidValueException("Input valid value"); }
+        this.start = start;
+        this.end = end;
+        this.length = end - start;
+    }
+
+    /**
+     * Constructor with matcher
+     * @param matcher Need to available matcher
+     */
+    public Area(Matcher matcher) {
+        this(matcher.start(), matcher.end());
     }
 
     /**
      * Check index area overlap
      * @param compareArea Area
-     * @return If compareArea index overlap with this Area : true
-     *         else : false
+     * @return <li>If compareArea index overlap with this Area : true</li>
+     *         <li>else : false</li>
      */
     public boolean isOverlap(Area compareArea) {
 
@@ -49,7 +64,7 @@ public class Area {
     /**
      * Check compareArea equals this area
      * @param compareArea Area
-     * @return boolean
+     * @return Check is have same value
      */
     public boolean equals(Area compareArea) {
         return compareArea.getStart() == this.start && compareArea.getEnd() == this.end;
@@ -58,7 +73,7 @@ public class Area {
 
     /**
      * Get same index area
-     * @return Area
+     * @return New area instance what have same value
      */
     @Override
     public Area clone() {
@@ -67,15 +82,24 @@ public class Area {
 
     /**
      * Get start index
-     * @return int
+     * @return start value
      */
     public int getStart() { return this.start; }
 
     /**
      * Get end index
-     * @return int
+     * @return end value
      */
     public int getEnd() { return this.end; }
 
+    /**
+     * Get area length
+     * @return area length
+     */
+    public int getLength() { return this.length; }
 
+
+    private boolean isInvalid(int startValue, int endValue) {
+        return startValue < 0 || endValue < 0 || startValue > endValue || startValue == endValue;
+    }
 }

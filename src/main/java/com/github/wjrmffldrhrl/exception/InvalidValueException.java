@@ -6,10 +6,10 @@ package com.github.wjrmffldrhrl.exception;
  *
  * @author wjrmffldrhrl
  */
-public class InvalidIndexException extends RuntimeException{
+public class InvalidValueException extends RuntimeException{
     /**
      * Throw InvalidIndexException
      * @param e String
      */
-    public InvalidIndexException(String e) { super(e); }
+    public InvalidValueException(String e) { super(e); }
 }
