@@ -18,10 +18,10 @@ public class Area {
      * @param start int
      * @param end int
      * @throws IllegalArgumentException If try initialize with invalid value
-     * <p>Invalid value list</p>
-     * <li>Input under 0</li>
-     * <li>End value under then start value</li>
-     * <li>Area length 0</li>
+     * Invalid value list
+     * Input under 0
+     * End value under then start value
+     * Area length 0
      */
     public Area(int start, int end) {
         if(isInvalid(start, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
