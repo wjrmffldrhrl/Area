@@ -1,7 +1,5 @@
 package com.github.wjrmffldrhrl;
 
-import com.github.wjrmffldrhrl.exception.InvalidValueException;
-
 import java.util.regex.Matcher;
 
 /**
@@ -19,17 +17,26 @@ public class Area {
      * Constructor with int
      * @param start int
      * @param end int
-     * @throws InvalidValueException If try initialize with invalid value
-     * Invalid value list
-     * Input under 0
-     * End value under then start value
-     * Area length 0
+     * @throws IllegalArgumentException If try initialize with invalid value
+     * <p>Invalid value list</p>
+     * <li>Input under 0</li>
+     * <li>End value under then start value</li>
+     * <li>Area length 0</li>
      */
     public Area(int start, int end) {
-        if(isInvalid(start, end)) { throw new InvalidValueException("Input valid value"); }
+        if(isInvalid(start, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
         this.start = start;
         this.end = end;
         this.length = end - start;
+    }
+
+    /**
+     * Constructor with String
+     * @param startStr String value
+     * @param endStr String value
+     */
+    public Area(String startStr, String endStr) {
+        this(Integer.parseInt(startStr),  Integer.parseInt(endStr));
     }
 
     /**
@@ -38,6 +45,7 @@ public class Area {
      */
     public Area(Matcher matcher) {
         this(matcher.start(), matcher.end());
+
     }
 
     /**

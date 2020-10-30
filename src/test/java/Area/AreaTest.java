@@ -1,25 +1,52 @@
 package Area;
 
 import com.github.wjrmffldrhrl.Area;
-import com.github.wjrmffldrhrl.exception.InvalidValueException;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class AreaTest {
 
-    @Test(expected = InvalidValueException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void underZeroIndexTest() {
         new Area(-1 , 4);
     }
 
-    @Test(expected = InvalidValueException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void inputInvalidIndexTest() {
         new Area(6, 4);
     }
 
-    @Test(expected = InvalidValueException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void sameIndexTest() {
         new Area(4 , 4);
+    }
+
+    @Test
+    public void createAreaWithStringTest() {
+        Area area = new Area("5", "9");
+        Assert.assertEquals(area.getStart(), 5);
+        Assert.assertEquals(area.getEnd(), 9);
+        Assert.assertEquals(area.getLength(), 4);
+    }
+
+    @Test
+    public void createAreaWithMatcherTest() {
+        String text = "Hello world 25304 !!!";
+        String numberPatternString = "[0-9]+";
+        Pattern numberPattern = Pattern.compile(numberPatternString);
+        Matcher matcher = numberPattern.matcher(text);
+        while (matcher.find()) {
+            Area area = new Area(matcher);
+
+            Assert.assertEquals(area.getStart(), 12);
+            Assert.assertEquals(area.getEnd(), 17);
+            Assert.assertEquals(area.getLength(), 5);
+        }
+
+
     }
 
     @Test
@@ -56,4 +83,7 @@ public class AreaTest {
 
         Assert.assertTrue(originalArea.equals(cloneArea));
     }
+
+
+
 }
