@@ -66,6 +66,12 @@ public class AreaTest {
     }
 
     @Test
+    public void getLengthTest() {
+        Area area = new Area(1, 4);
+        Assert.assertEquals(3, area.getLength());
+    }
+
+    @Test
     public void equalsTest() {
         Area a1 = new Area(1,3);
         Area a2 = new Area(1,3);
