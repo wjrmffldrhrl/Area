@@ -1,2 +1,2 @@
 # Area
-Index area for working with strings
+Index area for working with something need to control area
