@@ -70,6 +70,16 @@ public class Area {
     }
 
     /**
+     * Check is this area contains point
+     * @param point Index or point value
+     * @return If area contains this point : true
+     *         else : false
+     */
+    public boolean contains(int point) {
+        return (this.start <= point && this.end >= point);
+    }
+
+    /**
      * Check compareArea equals this area
      * @param compareArea Area
      * @return Check is have same value
@@ -105,7 +115,6 @@ public class Area {
      * @return area length
      */
     public int getLength() { return this.length; }
-
 
     /**
      * Return area to String

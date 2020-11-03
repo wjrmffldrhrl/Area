@@ -91,5 +91,19 @@ public class AreaTest {
     }
 
 
+    @Test
+    public void containsTest() {
+        Area area = new Area(5, 8);
+        int point1 = 6;
+        int point2 = 5;
+        int point3 = 2;
+        int point4 = 9;
+
+        Assert.assertTrue(area.contains(point1));
+        Assert.assertTrue(area.contains(point2));
+        Assert.assertFalse(area.contains(point3));
+        Assert.assertFalse(area.contains(point4));
+
+    }
 
 }
