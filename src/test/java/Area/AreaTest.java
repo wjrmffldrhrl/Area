@@ -10,18 +10,18 @@ import java.util.regex.Pattern;
 public class AreaTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void underZeroIndexTest() {
+    public void TestNegativeIndex() {
         new Area(-1 , 4);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void inputInvalidIndexTest() {
+    public void testInputInvalidIndex() {
         new Area(6, 4);
     }
 
 
     @Test
-    public void createAreaWithStringTest() {
+    public void testCreateAreaWithString() {
         Area area = new Area("5", "9");
         Assert.assertEquals(area.getStart(), 5);
         Assert.assertEquals(area.getEnd(), 9);
@@ -29,7 +29,7 @@ public class AreaTest {
     }
 
     @Test
-    public void createAreaWithMatcherTest() {
+    public void testCreateAreaWithMatcher() {
         String text = "Hello world 25304 !!!";
         String numberPatternString = "[0-9]+";
         Pattern numberPattern = Pattern.compile(numberPatternString);
@@ -46,7 +46,7 @@ public class AreaTest {
     }
 
     @Test
-    public void overlapTest() {
+    public void testOverlap() {
         Area leftArea = new Area(1,5);
         Area centerArea = new Area(2,7);
         Area smallCenterArea = new Area(3,6);
@@ -62,13 +62,13 @@ public class AreaTest {
     }
 
     @Test
-    public void getLengthTest() {
+    public void testGetLength() {
         Area area = new Area(1, 4);
         Assert.assertEquals(3, area.getLength());
     }
 
     @Test
-    public void equalsTest() {
+    public void testEquals() {
         Area a1 = new Area(1,3);
         Area a2 = new Area(1,3);
 
@@ -79,7 +79,7 @@ public class AreaTest {
     }
 
     @Test
-    public void cloneTest() {
+    public void testClone() {
         Area originalArea = new Area(1,3);
         Area cloneArea = originalArea.clone();
 
@@ -88,7 +88,7 @@ public class AreaTest {
 
 
     @Test
-    public void containsTest() {
+    public void testContains() {
         Area area = new Area(5, 8);
         int point1 = 6;
         int point2 = 5;
