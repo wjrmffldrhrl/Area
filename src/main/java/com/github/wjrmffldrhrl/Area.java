@@ -9,9 +9,9 @@ import java.util.regex.Matcher;
  */
 public class Area {
 
-    private final int start;
-    private final int end;
-    private final int length;
+    private int start;
+    private int end;
+    private int length;
 
     /**
      * Constructor with 0 length
