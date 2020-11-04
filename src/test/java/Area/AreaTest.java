@@ -19,10 +19,6 @@ public class AreaTest {
         new Area(6, 4);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void sameIndexTest() {
-        new Area(4 , 4);
-    }
 
     @Test
     public void createAreaWithStringTest() {

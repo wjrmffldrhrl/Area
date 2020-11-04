@@ -14,6 +14,14 @@ public class Area {
     private final int length;
 
     /**
+     * Constructor with 0 length
+     * @param point point value
+     */
+    public Area(int point) {
+        this(point, point);
+    }
+
+    /**
      * Constructor with int
      * @param start int
      * @param end int
@@ -21,7 +29,6 @@ public class Area {
      * Invalid value list
      * Input under 0
      * End value under then start value
-     * Area length 0
      */
     public Area(int start, int end) {
         if(isInvalid(start, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
@@ -127,6 +134,6 @@ public class Area {
     }
 
     private boolean isInvalid(int startValue, int endValue) {
-        return startValue < 0 || endValue < 0 || startValue > endValue || startValue == endValue;
+        return startValue < 0 || endValue < 0 || startValue > endValue;
     }
 }
