@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
  */
 public class Area {
 
-    private int start;
+    private int begin;
     private int end;
     private int length;
 
@@ -23,18 +23,18 @@ public class Area {
 
     /**
      * Constructor with int
-     * @param start int
+     * @param begin int
      * @param end int
      * @throws IllegalArgumentException If try initialize with invalid value
      * Invalid value list
      * Input under 0
      * End value under then start value
      */
-    public Area(int start, int end) {
-        if(isInvalid(start, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
-        this.start = start;
+    public Area(int begin, int end) {
+        if(isInvalid(begin, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
+        this.begin = begin;
         this.end = end;
-        this.length = end - start;
+        this.length = end - begin;
     }
 
     /**
@@ -63,13 +63,13 @@ public class Area {
      */
     public boolean isOverlap(Area compareArea) {
 
-        if(compareArea.getStart() > this.start && compareArea.getStart() < this.end) {
+        if(compareArea.getBegin() > this.begin && compareArea.getBegin() < this.end) {
             return true;
-        } else if(compareArea.getEnd() > this.start && compareArea.getEnd() < this.end) {
+        } else if(compareArea.getEnd() > this.begin && compareArea.getEnd() < this.end) {
             return true;
-        } else if(compareArea.getStart() < this.start && compareArea.getEnd() > this.end) {
+        } else if(compareArea.getBegin() < this.begin && compareArea.getEnd() > this.end) {
             return true;
-        } else if(compareArea.getStart() > this.start && compareArea.getEnd() < this.end) {
+        } else if(compareArea.getBegin() > this.begin && compareArea.getEnd() < this.end) {
             return true;
         }
 
@@ -83,7 +83,7 @@ public class Area {
      *         else : false
      */
     public boolean contains(int point) {
-        return (this.start <= point && this.end >= point);
+        return (this.begin <= point && this.end >= point);
     }
 
     /**
@@ -92,7 +92,7 @@ public class Area {
      * @return Check is have same value
      */
     public boolean equals(Area compareArea) {
-        return compareArea.getStart() == this.start && compareArea.getEnd() == this.end;
+        return compareArea.getBegin() == this.begin && compareArea.getEnd() == this.end;
     }
 
 
@@ -102,14 +102,14 @@ public class Area {
      */
     @Override
     public Area clone() {
-        return new Area(this.start, this.end);
+        return new Area(this.begin, this.end);
     }
 
     /**
      * Get start index
      * @return start value
      */
-    public int getStart() { return this.start; }
+    public int getBegin() { return this.begin; }
 
     /**
      * Get end index
@@ -130,7 +130,7 @@ public class Area {
      */
     @Override
     public String toString() {
-        return "start : " + this.start + " end : " + this.end;
+        return "start : " + this.begin + " end : " + this.end;
     }
 
     private boolean isInvalid(int startValue, int endValue) {

@@ -23,7 +23,7 @@ public class AreaTest {
     @Test
     public void testCreateAreaWithString() {
         Area area = new Area("5", "9");
-        Assert.assertEquals(area.getStart(), 5);
+        Assert.assertEquals(area.getBegin(), 5);
         Assert.assertEquals(area.getEnd(), 9);
         Assert.assertEquals(area.getLength(), 4);
     }
@@ -37,7 +37,7 @@ public class AreaTest {
         while (matcher.find()) {
             Area area = new Area(matcher);
 
-            Assert.assertEquals(area.getStart(), 12);
+            Assert.assertEquals(area.getBegin(), 12);
             Assert.assertEquals(area.getEnd(), 17);
             Assert.assertEquals(area.getLength(), 5);
         }
