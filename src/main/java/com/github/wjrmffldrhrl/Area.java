@@ -1,5 +1,6 @@
 package com.github.wjrmffldrhrl;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 
 /**
@@ -9,9 +10,9 @@ import java.util.regex.Matcher;
  */
 public class Area {
 
-    private int begin;
-    private int end;
-    private int length;
+    private final int begin;
+    private final int end;
+    private final int length;
 
     /**
      * Constructor with 0 length
@@ -106,6 +107,10 @@ public class Area {
         return compareArea.getBegin() == this.begin && compareArea.getEnd() == this.end;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.begin, this.end);
+    }
 
     /**
      * Get same index area
@@ -141,9 +146,8 @@ public class Area {
      */
     @Override
     public String toString() {
-        return "start : " + this.begin + " end : " + this.end;
+        return "start : " + this.begin + ", end : " + this.end;
     }
-
 
     private boolean isInvalid(int startValue, int endValue) {
         return startValue < 0 || endValue < 0 || startValue > endValue;

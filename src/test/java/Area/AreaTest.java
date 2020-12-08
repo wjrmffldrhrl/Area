@@ -85,7 +85,7 @@ public class AreaTest {
         Area originalArea = new Area(1,3);
         Area cloneArea = originalArea.clone();
 
-        Assert.assertTrue(originalArea.equals(cloneArea));
+        Assert.assertEquals(originalArea, cloneArea);
     }
 
 
@@ -102,6 +102,16 @@ public class AreaTest {
         Assert.assertFalse(area.contains(point3));
         Assert.assertFalse(area.contains(point4));
 
+    }
+
+    @Test
+    public void testHash() {
+        Area area1 = new Area(5, 8);
+        Area area2 = new Area(5, 8);
+        Area area3 = new Area(8, 9);
+
+        Assert.assertEquals(area1.hashCode(), area2.hashCode());
+        Assert.assertNotEquals(area3.hashCode(), area2.hashCode());
     }
 
 }
