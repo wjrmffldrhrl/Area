@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="Area.AreaTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="Area.AreaTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2020.2.4"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3\boot\plexus-classworlds.license"/>
     <property name="java.vm.specification.version" value="13"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.2.4 -s C:\Users\SAMSUNG\.m2\settings.xml test"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2020.2.4 -s C:\Users\SAMSUNG\.m2\settings.xml clean deploy"/>
     <property name="java.home" value="C:\Users\SAMSUNG\.jdks\azul-13.0.4"/>
     <property name="user.language" value="ko"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -61,7 +61,7 @@
     <property name="java.vendor.version" value="Zulu13.33+25-CA"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Area.AreaTest" name="testCreateAreaWithString" time="0.004"/>
+  <testcase classname="Area.AreaTest" name="testCreateAreaWithString" time="0.003"/>
   <testcase classname="Area.AreaTest" name="testOverlap" time="0"/>
   <testcase classname="Area.AreaTest" name="testClone" time="0"/>
   <testcase classname="Area.AreaTest" name="testContains" time="0"/>

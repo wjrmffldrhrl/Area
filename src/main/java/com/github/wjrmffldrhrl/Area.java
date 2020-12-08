@@ -88,10 +88,21 @@ public class Area {
 
     /**
      * Check compareArea equals this area
-     * @param compareArea Area
+     * @param o Area Object
      * @return Check is have same value
      */
-    public boolean equals(Area compareArea) {
+    @Override
+    public boolean equals(Object  o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Area)) {
+            return false;
+        }
+
+        Area compareArea = (Area) o;
+
         return compareArea.getBegin() == this.begin && compareArea.getEnd() == this.end;
     }
 
@@ -132,6 +143,7 @@ public class Area {
     public String toString() {
         return "start : " + this.begin + " end : " + this.end;
     }
+
 
     private boolean isInvalid(int startValue, int endValue) {
         return startValue < 0 || endValue < 0 || startValue > endValue;

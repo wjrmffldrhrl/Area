@@ -74,8 +74,10 @@ public class AreaTest {
 
         Area a3 = new Area(1,2);
 
-        Assert.assertTrue(a1.equals(a2));
-        Assert.assertFalse(a1.equals(a3));
+        Assert.assertEquals(a1, a1);
+        Assert.assertEquals(a2, a2);
+        Assert.assertEquals(a1, a2);
+        Assert.assertNotEquals(a1, a3);
     }
 
     @Test
