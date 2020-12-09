@@ -19,13 +19,11 @@ public class AreaTest {
         new Area(6, 4);
     }
 
-
     @Test
     public void testCreateAreaWithString() {
         Area area = new Area("5", "9");
         Assert.assertEquals(area.getBegin(), 5);
         Assert.assertEquals(area.getEnd(), 9);
-        Assert.assertEquals(area.getLength(), 4);
     }
 
     @Test
@@ -39,7 +37,6 @@ public class AreaTest {
 
             Assert.assertEquals(area.getBegin(), 12);
             Assert.assertEquals(area.getEnd(), 17);
-            Assert.assertEquals(area.getLength(), 5);
         }
 
 
@@ -62,12 +59,6 @@ public class AreaTest {
     }
 
     @Test
-    public void testGetLength() {
-        Area area = new Area(1, 4);
-        Assert.assertEquals(3, area.getLength());
-    }
-
-    @Test
     public void testEquals() {
         Area a1 = new Area(1,3);
         Area a2 = new Area(1,3);
@@ -79,15 +70,6 @@ public class AreaTest {
         Assert.assertEquals(a1, a2);
         Assert.assertNotEquals(a1, a3);
     }
-
-    @Test
-    public void testClone() {
-        Area originalArea = new Area(1,3);
-        Area cloneArea = originalArea.clone();
-
-        Assert.assertEquals(originalArea, cloneArea);
-    }
-
 
     @Test
     public void testContains() {

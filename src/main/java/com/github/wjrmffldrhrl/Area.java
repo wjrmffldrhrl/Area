@@ -1,6 +1,5 @@
 package com.github.wjrmffldrhrl;
 
-import java.util.Objects;
 import java.util.regex.Matcher;
 
 /**
@@ -12,7 +11,6 @@ public class Area {
 
     private final int begin;
     private final int end;
-    private final int length;
 
     /**
      * Constructor with 0 length
@@ -35,7 +33,6 @@ public class Area {
         if(isInvalid(begin, end)) { throw new IllegalArgumentException("Don't use invalid value"); }
         this.begin = begin;
         this.end = end;
-        this.length = end - begin;
     }
 
     /**
@@ -109,16 +106,10 @@ public class Area {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.begin, this.end);
-    }
+        int result = Integer.hashCode(this.begin);
+        result = 31 * result + Integer.hashCode(this.end);
 
-    /**
-     * Get same index area
-     * @return New area instance what have same value
-     */
-    @Override
-    public Area clone() {
-        return new Area(this.begin, this.end);
+        return result;
     }
 
     /**
@@ -132,12 +123,6 @@ public class Area {
      * @return end value
      */
     public int getEnd() { return this.end; }
-
-    /**
-     * Get area length
-     * @return area length
-     */
-    public int getLength() { return this.length; }
 
     /**
      * Return area to String
