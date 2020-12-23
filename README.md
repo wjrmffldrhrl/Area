@@ -1,5 +1,5 @@
 # Area
-[![Coverage Status](https://coveralls.io/repos/github/wjrmffldrhrl/Area/badge.svg?branch=master)](https://coveralls.io/github/wjrmffldrhrl/Area?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/wjrmffldrhrl/Area/badge.svg?branch=master)](https://coveralls.io/github/wjrmffldrhrl/Area?branch=master)  
 Index area for working with something need to control area
 
 # Installation
