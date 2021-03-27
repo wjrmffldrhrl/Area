@@ -26,4 +26,5 @@ compile group: 'com.github.wjrmffldrhrl', name: 'Area', version: '0.0.9'
 ```
 
 # Usage
-
+- Split strings
+- Find strings
